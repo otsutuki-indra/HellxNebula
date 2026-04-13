@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HellCrop | Scale Your Growth</title>
+    <style>
+        :root {
+            --primary-green: #2a5f2a;
+            --glass-bg: rgba(20, 20, 20, 0.75);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            /* Triangle theme pattern overlay */
+            background-image: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)), url('theme.png');
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+
+        /* Fast Moving Bubbles */
+        .bg-animation { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+        .bubble {
+            position: absolute; border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-green), transparent);
+            opacity: 0.35; filter: blur(45px);
+            animation: moveFast 4s infinite alternate ease-in-out;
+        }
+        .b1 { width: 450px; height: 450px; top: -5%; left: -10%; }
+        .b2 { width: 380px; height: 380px; bottom: 5%; right: -8%; animation-duration: 3s; }
+
+        @keyframes moveFast {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(160px, 110px) scale(1.25); }
+        }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 1.2rem 3rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border); z-index: 1000;
+        }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #fff; }
+        nav ul { display: flex; gap: 25px; list-style: none; }
+        nav a { color: #aaa; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--primary-green); }
+
+        /* Sections */
+        section {
+            min-height: 100vh; padding: 120px 10%;
+            display: flex; flex-direction: column; justify-content: center;
+            position: relative; z-index: 10;
+        }
+
+        .glass-card {
+            background: var(--glass-bg); backdrop-filter: blur(25px);
+            border: 1px solid var(--border); border-radius: 24px;
+            padding: 3.5rem; transition: 0.5s;
+        }
+        .glass-card:hover { border-color: var(--primary-green); box-shadow: 0 0 40px rgba(42, 95, 42, 0.25); }
+
+        h2 { font-size: 3.2rem; margin-bottom: 1.5rem; color: #fff; }
+        
+        .btn-action {
+            display: inline-block; margin-top: 25px;
+            background: var(--primary-green); color: white;
+            padding: 12px 35px; border: none; border-radius: 8px;
+            font-weight: 700; text-decoration: none; cursor: pointer; transition: 0.3s;
+        }
+        .btn-action:hover { transform: translateY(-3px); box-shadow: 0 0 20px var(--primary-green); }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 5, 5, 0.95); padding: 2.5rem;
+            text-align: center; font-size: 0.85rem; color: #555;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation">
+        <div class="bubble b1"></div>
+        <div class="bubble b2"></div>
+    </div>
+
+    <nav>
+        <div class="logo">ᎻᎬᏞᏞᏟᎡᎾᏢ</div>
+        <ul>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="#tool">TOOL</a></li>
+            <li><a href="#info">INFO</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <h1 style="font-size: 5.5rem; font-weight: 900; background: linear-gradient(to right, #fff, var(--primary-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">GROW WITHOUT LIMITS</h1>
+        <p>Advanced digital infrastructure for modern scale.</p>
+    </section>
+
+    <section id="features">
+        <div class="glass-card">
+            <h2>Features</h2>
+            <p>High-performance nodes, secure data management, and lightning-fast deployment speeds.</p>
+        </div>
+    </section>
+
+    <section id="tool">
+        <div class="glass-card">
+            <h2>Tool Panel</h2>
+            <p>Access our specialized analytical tools to optimize your growth metrics.</p>
+            <a href="tool.html" class="btn-action">OPEN TOOL INTERFACE</a>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="glass-card">
+            <h2>Info</h2>
+            <p>HellCrop provides aesthetic and high-performance digital solutions globally.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="glass-card">
+            <h2>Contact</h2>
+            <p>Get in touch with our technical support team for 24/7 assistance.</p>
+            <a href="mailto:support@hellcrop.com" class="btn-action">GET IN TOUCH</a>
+        </div>
+    </section>
+
+    <footer>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 12px;">
+            <span>© 2026 HellCrop. All rights reserved.</span> | 
+            <a href="#hero" style="color:#777; text-decoration:none;">Home</a> | 
+            <a href="#" style="color:#777; text-decoration:none;">Terms</a>
+            <div style="border-left: 1px solid #333; padding-left: 15px; margin-left: 10px; color: #fff;">𝕏 ▶ 📷</div>
+        </div>
+    </footer>
+
+</body>
+</html>
